@@ -31,13 +31,13 @@ class ApplePieUITests: XCTestCase {
     
     func testStatisticUpdatedAfterGuess() throws {
         let app = initApp()
-        app/*@START_MENU_TOKEN@*/.staticTexts["B"]/*[[".buttons[\"B\"].staticTexts[\"B\"]",".staticTexts[\"B\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["U"]/*[[".buttons[\"U\"].staticTexts[\"U\"]",".staticTexts[\"U\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["C"]/*[[".buttons[\"C\"].staticTexts[\"C\"]",".staticTexts[\"C\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["A"]/*[[".buttons[\"A\"].staticTexts[\"A\"]",".staticTexts[\"A\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["N"]/*[[".buttons[\"N\"].staticTexts[\"N\"]",".staticTexts[\"N\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["E"]/*[[".buttons[\"E\"].staticTexts[\"E\"]",".staticTexts[\"E\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["R"]/*[[".buttons[\"R\"].staticTexts[\"R\"]",".staticTexts[\"R\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.staticTexts["B"].tap()
+        app.staticTexts["U"].tap()
+        app.staticTexts["C"].tap()
+        app.staticTexts["A"].tap()
+        app.staticTexts["N"].tap()
+        app.staticTexts["E"].tap()
+        app.staticTexts["R"].tap()
         XCTAssert(app.staticTexts["gameStatsIdentifier"].label as String? == "Wins: 1, Losses: 0, Points: 1", "Statistics was not displayed or had unexpected values!")
     }
     
