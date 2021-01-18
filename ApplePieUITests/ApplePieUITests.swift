@@ -97,8 +97,46 @@ class ApplePieUITests: XCTestCase {
         app.staticTexts["M"].tap()
         XCTAssert(app.staticTexts["gameStatsIdentifier"].label as String? == "Wins: 5, Losses: 0, Points: 5")
         XCTAssert(app.staticTexts["guessedWordIdentifier"].label as String? == "p r o g r a m")
+    }
+    
+    func testPictureUpdatedAfterWrongLetter() throws {
+        let app = initApp()
+        app.staticTexts["Q"].tap()
+        XCTAssert(app.images["tree_6_id"].exists, "Tree image was not displayed!")
+        app.staticTexts["F"].tap()
+        XCTAssert(app.images["tree_5_id"].exists, "Tree image was not displayed!")
+    }
+    
+    func testLabelUpdatedAfterCorrectLetter() throws {
+        let app = initApp()
+        app.staticTexts["B"].tap()
+        XCTAssert(app.staticTexts["guessedWordIdentifier"].label as String? == "b _ _ _ _ _ _ _ _",
+                  "Label was not updated properly after guessed word!")
+    }
+    
+    func testLabelUpdatedAfterMultipleCorrectLetters() throws {
+        let app = initApp()
+        app.staticTexts["C"].tap()
+        XCTAssert(app.staticTexts["guessedWordIdentifier"].label as String? == "_ _ c c _ _ _ _ _",
+                  "Label was not updated properly after guessed word!")
+    }
+    
+    func testImageIsNotUpdatedAfterCorrectLetter() throws {
+        let app = initApp()
+        app.staticTexts["B"].tap()
+        XCTAssert(app.images["tree_7_id"].exists, "Tree image was not displayed!")
+    }
+    
+    func testLetterDisabledIfWrong() throws {
+        let app = initApp()
+        app.staticTexts["Q"].tap()
+        XCTAssert(app.buttons["Q"].exists, "Button was not displayed!")
+        XCTAssert(!app.buttons["Q"].isEnabled, "Button was not disabled!")
         
     }
+    
+    //Add test for all failed words
+    //re-organise tests in file
     
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

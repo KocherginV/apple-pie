@@ -62,6 +62,7 @@ class ViewController: UIViewController {
         correctWordLabel.text = wordsWithSpacing
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses), Points: \(totalPoints)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
+        treeImageView.accessibilityIdentifier = "tree_\(currentGame.incorrectMovesRemaining)_id"
     }
     
     func updateGameState() {
