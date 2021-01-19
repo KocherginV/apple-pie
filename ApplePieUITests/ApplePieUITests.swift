@@ -31,112 +31,166 @@ class ApplePieUITests: XCTestCase {
     
     func testStatisticUpdatedAfterGuess() throws {
         let app = initApp()
-        app.staticTexts["B"].tap()
-        app.staticTexts["U"].tap()
-        app.staticTexts["C"].tap()
-        app.staticTexts["A"].tap()
-        app.staticTexts["N"].tap()
-        app.staticTexts["E"].tap()
-        app.staticTexts["R"].tap()
+        app.buttons["B"].tap()
+        app.buttons["U"].tap()
+        app.buttons["C"].tap()
+        app.buttons["A"].tap()
+        app.buttons["N"].tap()
+        app.buttons["E"].tap()
+        app.buttons["R"].tap()
         XCTAssert(app.staticTexts["gameStatsIdentifier"].label as String? == "Wins: 1, Losses: 0, Points: 1", "Statistics was not displayed or had unexpected values!")
     }
     
     func testStatisticUpdatedAfterFail() throws {
         let app = initApp()
-        app.staticTexts["Q"].tap()
-        app.staticTexts["D"].tap()
-        app.staticTexts["F"].tap()
-        app.staticTexts["L"].tap()
-        app.staticTexts["M"].tap()
-        app.staticTexts["N"].tap()
-        app.staticTexts["O"].tap()
-        app.staticTexts["R"].tap()
-        app.staticTexts["S"].tap()
+        app.buttons["Q"].tap()
+        app.buttons["D"].tap()
+        app.buttons["F"].tap()
+        app.buttons["L"].tap()
+        app.buttons["M"].tap()
+        app.buttons["N"].tap()
+        app.buttons["O"].tap()
+        app.buttons["R"].tap()
+        app.buttons["S"].tap()
         XCTAssert(app.staticTexts["gameStatsIdentifier"].label as String? == "Wins: 0, Losses: 1, Points: 0")
     }
     
     func testCanGuessAllWords() throws {
         let app = initApp()
-        app.staticTexts["B"].tap()
-        app.staticTexts["U"].tap()
-        app.staticTexts["C"].tap()
-        app.staticTexts["A"].tap()
-        app.staticTexts["N"].tap()
-        app.staticTexts["E"].tap()
-        app.staticTexts["R"].tap()
+        app.buttons["B"].tap()
+        app.buttons["U"].tap()
+        app.buttons["C"].tap()
+        app.buttons["A"].tap()
+        app.buttons["N"].tap()
+        app.buttons["E"].tap()
+        app.buttons["R"].tap()
         
-        app.staticTexts["G"].tap()
-        app.staticTexts["L"].tap()
-        app.staticTexts["O"].tap()
-        app.staticTexts["R"].tap()
-        app.staticTexts["I"].tap()
-        app.staticTexts["U"].tap()
-        app.staticTexts["S"].tap()
+        app.buttons["G"].tap()
+        app.buttons["L"].tap()
+        app.buttons["O"].tap()
+        app.buttons["R"].tap()
+        app.buttons["I"].tap()
+        app.buttons["U"].tap()
+        app.buttons["S"].tap()
         
-        app.staticTexts["S"].tap()
-        app.staticTexts["W"].tap()
-        app.staticTexts["I"].tap()
-        app.staticTexts["F"].tap()
-        app.staticTexts["T"].tap()
+        app.buttons["S"].tap()
+        app.buttons["W"].tap()
+        app.buttons["I"].tap()
+        app.buttons["F"].tap()
+        app.buttons["T"].tap()
         
-        app.staticTexts["I"].tap()
-        app.staticTexts["N"].tap()
-        app.staticTexts["C"].tap()
-        app.staticTexts["A"].tap()
-        app.staticTexts["D"].tap()
-        app.staticTexts["E"].tap()
-        app.staticTexts["S"].tap()
-        app.staticTexts["C"].tap()
-        app.staticTexts["T"].tap()
+        app.buttons["I"].tap()
+        app.buttons["N"].tap()
+        app.buttons["C"].tap()
+        app.buttons["A"].tap()
+        app.buttons["D"].tap()
+        app.buttons["E"].tap()
+        app.buttons["S"].tap()
+        app.buttons["C"].tap()
+        app.buttons["T"].tap()
         
-        app.staticTexts["P"].tap()
-        app.staticTexts["R"].tap()
-        app.staticTexts["O"].tap()
-        app.staticTexts["G"].tap()
-        app.staticTexts["A"].tap()
-        app.staticTexts["M"].tap()
+        app.buttons["P"].tap()
+        app.buttons["R"].tap()
+        app.buttons["O"].tap()
+        app.buttons["G"].tap()
+        app.buttons["A"].tap()
+        app.buttons["M"].tap()
         XCTAssert(app.staticTexts["gameStatsIdentifier"].label as String? == "Wins: 5, Losses: 0, Points: 5")
         XCTAssert(app.staticTexts["guessedWordIdentifier"].label as String? == "p r o g r a m")
     }
     
     func testPictureUpdatedAfterWrongLetter() throws {
         let app = initApp()
-        app.staticTexts["Q"].tap()
+        app.buttons["Q"].tap()
         XCTAssert(app.images["tree_6_id"].exists, "Tree image was not displayed!")
-        app.staticTexts["F"].tap()
+        app.buttons["F"].tap()
         XCTAssert(app.images["tree_5_id"].exists, "Tree image was not displayed!")
     }
     
     func testLabelUpdatedAfterCorrectLetter() throws {
         let app = initApp()
-        app.staticTexts["B"].tap()
+        app.buttons["B"].tap()
         XCTAssert(app.staticTexts["guessedWordIdentifier"].label as String? == "b _ _ _ _ _ _ _ _",
                   "Label was not updated properly after guessed word!")
     }
     
     func testLabelUpdatedAfterMultipleCorrectLetters() throws {
         let app = initApp()
-        app.staticTexts["C"].tap()
+        app.buttons["C"].tap()
         XCTAssert(app.staticTexts["guessedWordIdentifier"].label as String? == "_ _ c c _ _ _ _ _",
                   "Label was not updated properly after guessed word!")
     }
     
     func testImageIsNotUpdatedAfterCorrectLetter() throws {
         let app = initApp()
-        app.staticTexts["B"].tap()
+        app.buttons["B"].tap()
         XCTAssert(app.images["tree_7_id"].exists, "Tree image was not displayed!")
     }
     
     func testLetterDisabledIfWrong() throws {
         let app = initApp()
-        app.staticTexts["Q"].tap()
+        app.buttons["Q"].tap()
         XCTAssert(app.buttons["Q"].exists, "Button was not displayed!")
         XCTAssert(!app.buttons["Q"].isEnabled, "Button was not disabled!")
-        
     }
     
-    //Add test for all failed words
-    //re-organise tests in file
+    func testFailGame() throws {
+        let app = initApp()
+        app.buttons["Q"].tap()
+        app.buttons["D"].tap()
+        app.buttons["F"].tap()
+        app.buttons["L"].tap()
+        app.buttons["M"].tap()
+        app.buttons["N"].tap()
+        app.buttons["O"].tap()
+        app.buttons["R"].tap()
+        app.buttons["S"].tap()
+        
+        app.buttons["P"].tap()
+        app.buttons["W"].tap()
+        app.buttons["M"].tap()
+        app.buttons["Q"].tap()
+        app.buttons["J"].tap()
+        app.buttons["D"].tap()
+        app.buttons["K"].tap()
+        app.buttons["A"].tap()
+        
+        app.buttons["A"].tap()
+        app.buttons["B"].tap()
+        app.buttons["C"].tap()
+        app.buttons["D"].tap()
+        app.buttons["E"].tap()
+        app.buttons["Q"].tap()
+        
+        app.buttons["B"].tap()
+        app.buttons["F"].tap()
+        app.buttons["G"].tap()
+        app.buttons["H"].tap()
+        app.buttons["I"].tap()
+        app.buttons["J"].tap()
+        app.buttons["X"].tap()
+        app.buttons["Y"].tap()
+        app.buttons["Z"].tap()
+        
+        app.buttons["Z"].tap()
+        app.buttons["X"].tap()
+        app.buttons["Y"].tap()
+        app.buttons["S"].tap()
+        app.buttons["T"].tap()
+        app.buttons["U"].tap()
+        app.buttons["V"].tap()
+        
+        app.buttons["Z"].tap()
+        app.buttons["X"].tap()
+        app.buttons["Y"].tap()
+        app.buttons["S"].tap()
+        app.buttons["T"].tap()
+        app.buttons["U"].tap()
+        app.buttons["V"].tap()
+        XCTAssert(app.images["tree_1_id"].exists, "Tree image was not displayed!")
+        XCTAssert(app.staticTexts["guessedWordIdentifier"].label as String? == "_ _ _ _ _ _ _", "Incorrect placeholder was displayed!")
+        XCTAssert(app.staticTexts["gameStatsIdentifier"].label as String? == "Wins: 0, Losses: 4, Points: 0", "Incorrect statistic was displayed!")
+    }
     
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
