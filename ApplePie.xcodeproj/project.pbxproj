@@ -16,6 +16,7 @@
 		F0AFF077258A66E70043FB5D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AFF076258A66E70043FB5D /* Game.swift */; };
 		F0EFC62E25AF4A9D00419605 /* ApplePieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFC62D25AF4A9D00419605 /* ApplePieUITests.swift */; };
 		F0EFC63A25AF557900419605 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F0EFC63925AF557900419605 /* .gitignore */; };
+		F0EFC96A25B81F2D00419605 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFC96925B81F2D00419605 /* BaseTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		F0EFC62D25AF4A9D00419605 /* ApplePieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePieUITests.swift; sourceTree = "<group>"; };
 		F0EFC62F25AF4A9D00419605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0EFC63925AF557900419605 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F0EFC96925B81F2D00419605 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				F0EFC62D25AF4A9D00419605 /* ApplePieUITests.swift */,
 				F0EFC62F25AF4A9D00419605 /* Info.plist */,
+				F0EFC96925B81F2D00419605 /* BaseTest.swift */,
 			);
 			path = ApplePieUITests;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EFC96A25B81F2D00419605 /* BaseTest.swift in Sources */,
 				F0EFC62E25AF4A9D00419605 /* ApplePieUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
