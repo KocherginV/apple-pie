@@ -27,11 +27,4 @@ class BaseTest: XCTestCase{
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func enterWord(word: String) {
-        for letter in word {
-            let button = app.buttons[String(letter).uppercased()]
-            button.tap()
-        }
-    }
-    
 }
