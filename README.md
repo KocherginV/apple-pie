@@ -3,7 +3,9 @@ The main goal of this project is to demonstrate Page Object approach, commonly u
 Application used for testing is learning project from book "Develop in Swift. Fundamentals" issued by Apple. 
 Project done in the form of game: one needs to guess words. If word is guessed, he gets points increased. Otherwise, there are 7 attempts before failure. After each attempt single apple gets picked from the tree.
 The list of words is hardcoded and includes following: "buccaneer", "glorious", "swift", "incadescent", "program".
-
+<br>
+<img width="745" alt="apple-pie" src="https://user-images.githubusercontent.com/23701921/105718051-1ffa7800-5f21-11eb-8a09-a468c1361a24.png">
+</br>
 <h2>Running</h2>
 
 As the porecondition one needs to have following:
