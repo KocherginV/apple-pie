@@ -13,9 +13,12 @@
 		F0092FE92583D52E00206D4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0092FE72583D52E00206D4C /* Main.storyboard */; };
 		F0092FEB2583D53000206D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0092FEA2583D53000206D4C /* Assets.xcassets */; };
 		F0092FEE2583D53000206D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0092FEC2583D53000206D4C /* LaunchScreen.storyboard */; };
+		F00E7C2925B9744A00184CBA /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E7C2825B9744A00184CBA /* BaseScreen.swift */; };
+		F00E7C2F25B9750F00184CBA /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E7C2E25B9750F00184CBA /* GameScreen.swift */; };
 		F0AFF077258A66E70043FB5D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AFF076258A66E70043FB5D /* Game.swift */; };
 		F0EFC62E25AF4A9D00419605 /* ApplePieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFC62D25AF4A9D00419605 /* ApplePieUITests.swift */; };
 		F0EFC63A25AF557900419605 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F0EFC63925AF557900419605 /* .gitignore */; };
+		F0EFC96A25B81F2D00419605 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFC96925B81F2D00419605 /* BaseTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +40,14 @@
 		F0092FEA2583D53000206D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0092FED2583D53000206D4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0092FEF2583D53000206D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F00E7C2825B9744A00184CBA /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
+		F00E7C2E25B9750F00184CBA /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		F0AFF076258A66E70043FB5D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F0EFC62B25AF4A9D00419605 /* ApplePieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EFC62D25AF4A9D00419605 /* ApplePieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePieUITests.swift; sourceTree = "<group>"; };
 		F0EFC62F25AF4A9D00419605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0EFC63925AF557900419605 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F0EFC96925B81F2D00419605 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +102,29 @@
 			path = ApplePie;
 			sourceTree = "<group>";
 		};
+		F00E7C2625B9740B00184CBA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F00E7C2825B9744A00184CBA /* BaseScreen.swift */,
+				F00E7C2E25B9750F00184CBA /* GameScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F00E7C2725B9741A00184CBA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFC96925B81F2D00419605 /* BaseTest.swift */,
+				F0EFC62D25AF4A9D00419605 /* ApplePieUITests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		F0EFC62C25AF4A9D00419605 /* ApplePieUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F0EFC62D25AF4A9D00419605 /* ApplePieUITests.swift */,
+				F00E7C2725B9741A00184CBA /* Tests */,
+				F00E7C2625B9740B00184CBA /* Screens */,
 				F0EFC62F25AF4A9D00419605 /* Info.plist */,
 			);
 			path = ApplePieUITests;
@@ -217,7 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EFC96A25B81F2D00419605 /* BaseTest.swift in Sources */,
+				F00E7C2F25B9750F00184CBA /* GameScreen.swift in Sources */,
 				F0EFC62E25AF4A9D00419605 /* ApplePieUITests.swift in Sources */,
+				F00E7C2925B9744A00184CBA /* BaseScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
